@@ -1,26 +1,47 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@400;500;700&family=Google+Sans:wght@400;500;700&display=swap');
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Elige una de las siguientes fuentes para --font-sans: */
+ /* --font-sans: 'Google Sans', sans-serif; /* Opción 1: Google Sans */
+  /* --font-sans: 'Roboto', sans-serif;    /* Opción 2: Roboto */
+   --font-sans: 'Inter', sans-serif;     /* Opción 3: Inter */
+ /* --font-mono: var(--font-geist-mono);*/
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #3f3e3e;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
+
+@layer utilities {
+  .animate-scale-in {
+    @apply animate-[scaleIn_0.25s_ease-out];
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
