@@ -84,7 +84,7 @@ export default function LoginPage() {
 
         <div className="z-10 flex flex-col items-center justify-center gap-4">
           <motion.h1
-            className="text-5xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg"
+            className="text-3xl md:text-5xl font-extrabold tracking-tight drop-shadow-lg"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -101,9 +101,11 @@ export default function LoginPage() {
             </motion.span>
           </motion.h1>
 
-          <div className="w-[280px] md:w-[300px]">
+          <div className="w-[180px]  md:w-[300px]">
             <Lottie animationData={animationData} loop={true} />
           </div>
+          
+          
           <TypewriterText
             text="I A que conversa por vos. Automatizá interacciones y optimizá tu tiempo en cada mensaje"
             speed={80}
@@ -116,14 +118,15 @@ export default function LoginPage() {
       <div className="flex flex-col justify-center px-8 sm:px-16 md:px-32 shadow-xl rounded-t-2xl md:rounded-none">
         <div className="w-full max-w-md mx-auto">
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <div className="flex justify-center mb-6">
-              <Image
-                src="/logo/logoclinica.png"
-                alt="Logo"
-               width={180}
-               height={180}
-              />
-            </div>
+           <div className="flex justify-center mb-6">
+  <Image
+    src="/logo/logoclinica.png"
+    alt="Logo"
+    width={180}
+    height={180}
+    className="w-24 sm:w-32 md:w-48 h-auto"
+  />
+</div>
 
             <div className="relative">
               <label htmlFor="email" className="block text-sm font-medium mb-1">
