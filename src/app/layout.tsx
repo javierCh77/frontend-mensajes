@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sistema de Turnos Odontológicos",
-  description: "Administración de turnos y pacientes para clínica odontológica.",
+  title: "Sistema de Gestion con IA",
+  description: "Administración de mensajes automatizados con Inteligencia artificial",
 };
 
 export default function RootLayout({

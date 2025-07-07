@@ -62,7 +62,7 @@ export const ServicioModal = ({ open, datos, errores, setDatos, onClose, onSubmi
 
         <div className="flex justify-end gap-2 mt-4">
           <button onClick={onClose} className="bg-gray-200 px-4 py-2 rounded">Cancelar</button>
-          <button onClick={onSubmit} className="bg-[#5b709c] text-white px-4 py-2 rounded hover:bg-[#475882]">
+          <button onClick={onSubmit} className=" text-white px-4 py-2 rounded bg-[#059669] hover:bg-[#047854]">
             Guardar
           </button>
         </div>
