@@ -24,9 +24,10 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
 
   return (
     <div className="overflow-x-auto border rounded-lg mt-4">
-      <table className="min-w-full text-sm text-left">
+      <table className="min-w-full text-xs text-left">
         <thead className="bg-gray-100 text-gray-600">
           <tr>
+          <th className="px-4 py-2">Fecha Solicitud</th>
             <th className="px-4 py-2">Nombre</th>
             <th className="px-4 py-2">Apellido</th>
             <th className="px-4 py-2">DNI</th>
@@ -36,7 +37,6 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
             <th className="px-4 py-2">Profesional</th>
             <th className="px-4 py-2">Franja Horaria</th>
             <th className="px-4 py-2">Obra Social</th>
-            <th className="px-4 py-2">Fecha Solicitud</th>
             <th className="px-4 py-2">Estado</th>
             <th className="px-4 py-2">Modificado por</th>
             <th className="px-4 py-2">Fecha modificación</th>
@@ -46,6 +46,9 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
         <tbody>
           {solicitudes.map((s) => (
             <tr key={s.id} className="border-t hover:bg-gray-50">
+             <td className="px-4 py-1">
+                {new Date(s.fechaSolicitud).toLocaleString()}
+              </td>
               <td className="px-4 py-2">{s.nombre}</td>
               <td className="px-4 py-2">{s.apellido}</td>
               <td className="px-4 py-2">{s.dni}</td>
@@ -55,12 +58,10 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
               <td className="px-4 py-2">{s.profesional}</td>
               <td className="px-4 py-2">{s.franjaHoraria}</td>
               <td className="px-4 py-2">{s.obraSocial}</td>
-              <td className="px-4 py-2">
-                {new Date(s.fechaSolicitud).toLocaleString()}
-              </td>
+             
               <td className="px-4 py-2">
                 <span
-                  className={`capitalize px-2 py-1 rounded-full text-xs font-semibold ${getEstadoBadgeClass(
+                  className={`capitalize px-2 py-2 rounded-full text-xs font-semibold ${getEstadoBadgeClass(
                     s.estado
                   )}`}
                 >
@@ -73,7 +74,7 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
                   ? new Date(s.fechaModificacion).toLocaleString()
                   : "-"}
               </td>
-              <td className="px-4 py-2 text-right">
+              <td className="px-4 py-1 text-right">
                 <div className="flex gap-2 justify-end">
                   {s.estado !== "confirmado" && (
                     <button
