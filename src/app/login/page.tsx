@@ -90,7 +90,7 @@ export default function LoginPage() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-white">Convers</span>
-            <span className="text-green-200">IA</span>
+            <span className="text-[#a7f3db]">IA</span>
             <motion.span
               initial={{ y: 0 }}
               animate={{ y: [0, -5, 0] }}
@@ -106,7 +106,7 @@ export default function LoginPage() {
           </div>
 
           <TypewriterText
-            text="I A que conversa por vos. Automatizá interacciones y optimizá tu tiempo en cada mensaje"
+            text=" IIA que conversa por vos. Automatizá interacciones y optimizá tu tiempo en cada mensaje."
             speed={80}
             className="text-white text-base md:text-lg text-center max-w-sm drop-shadow-[0_3px_6px_rgba(0,0,0,0.5)]"
           />

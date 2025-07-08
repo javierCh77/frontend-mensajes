@@ -38,9 +38,9 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
             <th className="p-1 whitespace-nowrap">Franja Horaria</th>
             <th className="p-1 whitespace-nowrap">Obra Social</th>
             <th className="p-1 whitespace-nowrap">Estado</th>
-            <th className="p-1 whitespace-nowrap">Modificado por</th>
+            <th className="p-1 whitespace-nowrap">Modifico</th>
             <th className="p-1 whitespace-nowrap">Fecha modificación</th>
-            <th className="p-1 text-right whitespace-nowrap">Acciones</th>
+            <th className="p-1 text-center whitespace-nowrap">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -49,7 +49,7 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
               key={s.id}
               className={`border-t hover:bg-gray-50 ${i % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
             >
-              <td className="p-1">{new Date(s.fechaSolicitud).toLocaleString()}</td>
+              <td className="p-1 px-5">{new Date(s.fechaSolicitud).toLocaleString()}</td>
               <td className="p-1">{s.nombre}</td>
               <td className="p-1">{s.apellido}</td>
               <td className="p-1">{s.dni}</td>
@@ -70,8 +70,8 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
                   ? new Date(s.fechaModificacion).toLocaleString()
                   : "-"}
               </td>
-              <td className="p-1 text-right">
-                <div className="flex gap-2 justify-end">
+              <td className="p-1 text-center">
+                <div className="flex gap-2 justify-center">
                   {s.estado !== "confirmado" && (
                     <button
                       title="Confirmar"
