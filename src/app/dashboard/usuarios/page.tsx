@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { UserRoundPlus, Users } from "lucide-react";
+import { Pencil, Search, Trash2, UserRoundPlus, Users } from "lucide-react";
 import api from "@/lib/api";
 import { toast } from "react-hot-toast";
 
@@ -110,49 +110,52 @@ export default function UsuariosPage() {
 
   return (
     <div className="p-2">
-      <div className="flex items-center gap-2">
-        <Users />
+       <div className="flex items-center gap-2 text-[#022c1f]">
+        <Users color="#10b985" />
         <h2 className="text-2xl font-bold">Usuarios</h2>
       </div>
 
-      <div className="flex items-center justify-between py-4">
-        <input
+      <div className="flex flex-col md:flex-row md:items-center justify-between py-4 gap-4">
+      <input
           type="text"
           placeholder="Buscar usuario..."
-          className="border px-3 py-1 rounded w-full max-w-sm"
+          className="border px-3 py-2 rounded-md w-full max-w-sm focus:outline-none focus:ring-2 focus:ring-[#25D366]"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
+    
         <button
-          className="ml-4 bg-[#5b709c] hover:bg-[#475882] text-white px-4 py-1 rounded-lg flex items-center gap-2 cursor-pointer"
-          onClick={() => setModalOpen(true)}
+        className="bg-[#25D366] hover:bg-[#1CB255] text-white px-4 py-2 rounded-md flex items-center gap-2 shadow-md"
+        onClick={() => setModalOpen(true)}
         >
           <UserRoundPlus size={18} />
           Crear Usuario
         </button>
       </div>
 
-      <div className="overflow-x-auto h-[72vh] rounded-lg shadow-md">
-        <table className="min-w-full border-collapse shadow-md">
-          <thead className="bg-[#2f374d] text-white text-sm">
-            <tr>
+      <div className="overflow-x-auto border rounded-lg mt-4">
+      <table className="min-w-full text-sm text-left">
+        <thead className="bg-gray-100 text-gray-600">
+            <tr className="text-center"> 
               <th className="px-6 py-2">Nombre</th>
               <th className="px-6 py-2">Apellido</th>
               <th className="px-6 py-2">DNI</th>
               <th className="px-6 py-2">Email</th>
               <th className="px-6 py-2">Celular</th>
-              <th className="px-6 py-2">Rol</th>
+              <th className="px-6 py-2 text-center ">Rol</th>
+        
             </tr>
           </thead>
-          <tbody className="bg-white text-center divide-y divide-gray-200">
+          <tbody >
             {usuariosFiltrados.map((u) => (
-              <tr key={u.id}>
+              <tr key={u.id} className="border-t hover:bg-gray-50 text-center">
                 <td className="px-6 py-2 text-xs text-gray-700">{u.nombre}</td>
                 <td className="px-6 py-2 text-xs text-gray-700">{u.apellido}</td>
                 <td className="px-6 py-2 text-xs text-gray-700">{u.dni}</td>
                 <td className="px-6 py-2 text-xs text-gray-700">{u.email}</td>
                 <td className="px-6 py-2 text-xs text-gray-700">{u.celular}</td>
-                <td className="px-6 py-2 text-xs text-gray-700 capitalize">{u.rol}</td>
+                <td className="px-6 py-2 text-xs text-gray-700 capitalize  ">{u.rol}</td>
+                
               </tr>
             ))}
           </tbody>

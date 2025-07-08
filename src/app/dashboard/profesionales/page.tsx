@@ -8,7 +8,6 @@ import { Profesional, ProfesionalInput } from "@/types/profesional";
 import { Servicio } from "@/types/servicio";
 import { ProfesionalModal } from "@/components/dashboard/profesionales/ProfesionalModal";
 import { TablaProfesionales } from "@/components/dashboard/profesionales/TablaProfesionales";
-import { ServicioToolbar } from "@/components/dashboard/servicios/ServicioToolbar";
 import { ProfesionalToolbar } from "@/components/dashboard/profesionales/ProfesionalToolbar";
 
 export default function ProfesionalesPage() {
