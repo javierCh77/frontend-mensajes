@@ -1,13 +1,21 @@
-import { CalendarDays, UserPlus, HeartPulse, Stethoscope } from "lucide-react";
-import { TrendingUp, TrendingDown } from "lucide-react";
+import {
+  CalendarDays,
+  MessageSquareText,
+  Inbox,
+  Bot,
+  Clock3,
+  Timer,
+  TrendingUp,
+  TrendingDown,
+} from "lucide-react";
 
 const icons = {
-  "Total de Turnos Hoy": <CalendarDays className="text-indigo-500 w-6 h-6" />,
-  "Pacientes Nuevos": <UserPlus className="text-green-500 w-6 h-6" />,
-  "Obras Sociales Activas": <HeartPulse className="text-pink-500 w-6 h-6" />,
-  "Profesionales en Servicio": (
-    <Stethoscope className="text-yellow-500 w-6 h-6" />
-  ),
+  "Total Mensajes": <MessageSquareText className="text-indigo-500 w-6 h-6" />,
+  "Recibidos Hoy": <Inbox className="text-blue-500 w-6 h-6" />,
+  "Respuestas IA": <Bot className="text-purple-500 w-6 h-6" />,
+  "Tiempo P. de Respuesta": <Clock3 className="text-yellow-500 w-6 h-6" />,
+  "Éxito Respuestas IA": <TrendingUp className="text-green-500 w-6 h-6" />,
+  "Mensajes Pendientes": <Timer className="text-red-500 w-6 h-6" />,
 };
 
 export default function Card({
@@ -16,9 +24,12 @@ export default function Card({
   trend,
 }: {
   title: string;
-  value: string | number;
+  value: string | number | null | undefined;
   trend?: number;
 }) {
+  // Log para debugging
+  console.log("Rendering Card:", { title, value });
+
   const renderTrendBadge = () => {
     if (trend === undefined) return null;
 
@@ -51,16 +62,19 @@ export default function Card({
         <div className="flex flex-col w-full">
           <div className="flex justify-between items-center">
             <p className="text-sm text-gray-500 font-medium">{title}</p>
-
             {renderTrendBadge()}
-          </div>{" "}
-          <div className="  rounded-full flex items-center justify-between">
-            {icons[title as keyof typeof icons] || (
-              <CalendarDays className="text-gray-400 w-6 h-6 " />
-            )}
-              <p className="text-2xl font-semibold text-gray-500 mt-1">{value}</p>
           </div>
-        
+
+          <div className="flex items-center justify-between mt-1">
+            {/* Ícono (o fallback) */}
+            {icons[title as keyof typeof icons] ?? (
+              <CalendarDays className="text-gray-400 w-6 h-6" />
+            )}
+            {/* Valor (con fallback visual) */}
+            <p className="text-2xl font-semibold text-gray-500">
+              {value ?? "—"}
+            </p>
+          </div>
         </div>
       </div>
     </div>

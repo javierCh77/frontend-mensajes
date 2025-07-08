@@ -1,0 +1,116 @@
+{
+  "mensajesHoy": 120,
+  "respuestasIA": 95,
+  "tiempoPromedioRespuesta": "3m 40s",
+  "porcentajeExitoIA": 82,
+  "mensajesPendientes": 15,
+  "mensajesAsignados": 40,
+
+  "mensajesUltimos7Dias": [
+    { "fecha": "2025-07-01", "cantidad": 100 },
+    { "fecha": "2025-07-02", "cantidad": 110 },
+    { "fecha": "2025-07-03", "cantidad": 95 },
+    { "fecha": "2025-07-04", "cantidad": 130 },
+    { "fecha": "2025-07-05", "cantidad": 125 },
+    { "fecha": "2025-07-06", "cantidad": 140 },
+    { "fecha": "2025-07-07", "cantidad": 120 }
+  ],
+
+  "mensajesPorEstadoUltimos7Dias": [
+    { "fecha": "2025-07-01", "recibidos": 100, "respondidos": 80 },
+    { "fecha": "2025-07-02", "recibidos": 110, "respondidos": 88 },
+    { "fecha": "2025-07-03", "recibidos": 95, "respondidos": 72 },
+    { "fecha": "2025-07-04", "recibidos": 130, "respondidos": 101 },
+    { "fecha": "2025-07-05", "recibidos": 125, "respondidos": 97 },
+    { "fecha": "2025-07-06", "recibidos": 140, "respondidos": 105 },
+    { "fecha": "2025-07-07", "recibidos": 120, "respondidos": 95 }
+  ],
+
+  "mensajesPorHora": [
+    { "hora": "08:00", "cantidad": 12 },
+    { "hora": "09:00", "cantidad": 28 },
+    { "hora": "10:00", "cantidad": 35 },
+    { "hora": "11:00", "cantidad": 40 },
+    { "hora": "12:00", "cantidad": 30 },
+    { "hora": "13:00", "cantidad": 22 },
+    { "hora": "14:00", "cantidad": 18 },
+    { "hora": "15:00", "cantidad": 24 },
+    { "hora": "16:00", "cantidad": 27 },
+    { "hora": "17:00", "cantidad": 19 },
+    { "hora": "18:00", "cantidad": 10 },
+    { "hora": "19:00", "cantidad": 5 },
+    { "hora": "20:00", "cantidad": 3 }
+  ],
+
+  "mensajesPorMes": [
+    { "mes": "Enero", "cantidad": 320 },
+    { "mes": "Febrero", "cantidad": 285 },
+    { "mes": "Marzo", "cantidad": 310 },
+    { "mes": "Abril", "cantidad": 290 },
+    { "mes": "Mayo", "cantidad": 340 },
+    { "mes": "Junio", "cantidad": 410 },
+    { "mes": "Julio", "cantidad": 780 },
+    { "mes": "Agosto", "cantidad": 0 },
+    { "mes": "Septiembre", "cantidad": 0 },
+    { "mes": "Octubre", "cantidad": 0 },
+    { "mes": "Noviembre", "cantidad": 0 },
+    { "mes": "Diciembre", "cantidad": 0 }
+  ],
+
+  "mensajesPorCanal": [
+    { "canal": "WhatsApp", "total": 90 },
+    { "canal": "Web", "total": 20 },
+    { "canal": "Email", "total": 10 }
+  ],
+
+  "estadosDetalle": [
+    {
+      "estado": "pendiente",
+      "cantidad": 15,
+      "ultimaActualizacion": "2025-07-08T10:30:00"
+    },
+    {
+      "estado": "asignado",
+      "cantidad": 40,
+      "ultimaActualizacion": "2025-07-08T10:20:00"
+    },
+    {
+      "estado": "respondido",
+      "cantidad": 60,
+      "ultimaActualizacion": "2025-07-08T10:15:00"
+    },
+    {
+      "estado": "cerrado",
+      "cantidad": 90,
+      "ultimaActualizacion": "2025-07-08T10:00:00"
+    }
+  ],
+
+  "ultimosMensajes": [
+    {
+      "nombre": "Javier Ch.",
+      "mensaje": "Hola, quiero pedir turno con clínica médica",
+      "fecha": "2025-07-08T10:25:00"
+    },
+    {
+      "nombre": "Romina L.",
+      "mensaje": "¿Atienden por OSDE?",
+      "fecha": "2025-07-08T10:22:00"
+    },
+    {
+      "nombre": "Luis P.",
+      "mensaje": "¿Dónde están ubicados?",
+      "fecha": "2025-07-08T10:15:00"
+    },
+    {
+      "nombre": "Claudia R.",
+      "mensaje": "Hola, ¿me pasás horarios disponibles?",
+      "fecha": "2025-07-08T10:08:00"
+    },
+    {
+      "nombre": "Fernando G.",
+      "mensaje": "Buenos días, necesito atención pediátrica",
+      "fecha": "2025-07-08T10:02:00"
+    }
+  ]
+}
