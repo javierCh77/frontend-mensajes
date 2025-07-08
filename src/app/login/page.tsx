@@ -61,7 +61,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen grid grid-cols-1 md:grid-cols-2 bg-white text-[#1E293B]">
       {/* LADO IZQUIERDO: Estética WhatsApp automation refinada */}
-      <div className="relative flex flex-col items-center justify-center bg-gradient-to-b from-[#25D366] via-[#A1F3C3] to-white md:rounded-r-[80px] overflow-hidden px-6 py-10 text-center gap-6">
+      <div className="relative flex flex-col items-center justify-center bg-gradient-to-b from-[#059669] via-[#A1F3C3] to-white md:rounded-r-[80px] overflow-hidden px-6 py-10 text-center gap-6">
         {/* Fondo ondulado */}
         <svg
           className="absolute inset-0 w-full h-full z-0"
@@ -71,7 +71,7 @@ export default function LoginPage() {
         >
           <defs>
             <linearGradient id="waveGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#25D366" stopOpacity="0.6" />
+              <stop offset="0%" stopColor="#059669" stopOpacity="0.6" />
               <stop offset="50%" stopColor="#A1F3C3" stopOpacity="0.3" />
               <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
             </linearGradient>
@@ -138,10 +138,10 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-10 py-2 rounded-md border border-[#E2E8F0] bg-[#F8FAFC] focus:outline-none focus:ring-2 focus:ring-[#25D366]"
+                className="w-full px-10 py-2 rounded-md border border-[#E2E8F0] bg-[#F8FAFC] focus:outline-none focus:ring-2 focus:ring-[#34d3a2]"
                 placeholder="usuario@autowhats.com"
               />
-              <User className="absolute left-3 top-8 h-5 w-5 text-[#82e4af]" />
+              <User className="absolute left-3 top-8 h-5 w-5 text-[#6ee7c1]" />
             </div>
 
             <div className="relative">
@@ -158,10 +158,10 @@ export default function LoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-10 py-2 rounded-md border border-[#E2E8F0] bg-[#F8FAFC] focus:outline-none focus:ring-2 focus:ring-[#25D366]"
+                className="w-full px-10 py-2 rounded-md border border-[#E2E8F0] bg-[#F8FAFC] focus:outline-none focus:ring-2 focus:ring-[#34d3a2]"
                 placeholder="••••••••"
               />
-              <Lock className="absolute left-3 top-8 h-5 w-5 text-[#82e4af]" />
+              <Lock className="absolute left-3 top-8 h-5 w-5 text-[#6ee7c1]" />
             </div>
 
             <div className="flex items-center justify-between">
@@ -170,13 +170,13 @@ export default function LoginPage() {
                   type="checkbox"
                   checked={rememberMe}
                   onChange={(e) => setRememberMe(e.target.checked)}
-                  className="accent-[#25D366]"
+                  className="accent-[#6ee7c1]"
                 />
                 Recordarme
               </label>
               <Link
                 href="/forgot-password"
-                className="text-sm text-[#25D366] hover:underline"
+                className="text-sm text-[#10b985] hover:underline"
               >
                 ¿Olvidaste tu contraseña?
               </Link>
@@ -184,7 +184,7 @@ export default function LoginPage() {
 
             <button
               type="submit"
-              className="transition-transform duration-200 hover:scale-[1.02] ease-in-out w-full py-2 px-4 bg-[#25D366] hover:bg-[#1CB255] text-white font-semibold rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#25D366] cursor-pointer flex items-center justify-center gap-2"
+              className="transition-transform duration-200 hover:scale-[1.02] ease-in-out w-full py-2 px-4 bg-[#059669] hover:bg-[#10b985] text-white font-semibold rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#25D366] cursor-pointer flex items-center justify-center gap-2"
               disabled={loading}
             >
               {loading ? (
@@ -225,7 +225,7 @@ export default function LoginPage() {
         <div className="mt-6 text-center text-xs text-[#94A3B8]">
           <span className="flex justify-center gap-1">
             &copy; {currentYear}{" "}
-            <span className="text-[#25D366] font-bold">Alba</span> Dev
+            <span className="text-[#059669] font-bold">Alba</span> Dev
           </span>
           <span>Todos los derechos reservados.</span>
         </div>
