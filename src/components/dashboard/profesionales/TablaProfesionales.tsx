@@ -11,7 +11,7 @@ interface Props {
 
 export function TablaProfesionales({ profesionales, onEdit, onDelete }: Props) {
   return (
-    <div className="overflow-x-auto border rounded-lg mt-4">
+    <div className="overflow-x-auto h-[65vh] rounded-lg border border-gray-200 shadow-md">
       <table className="min-w-full text-sm text-left">
         <thead className="bg-gray-100 text-gray-600">
           <tr>

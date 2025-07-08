@@ -60,8 +60,9 @@ export default function SolicitudesPage() {
   });
 
   return (
-    <div className="p-4">
-        <div className="flex items-center gap-2 text-[#022c1f]">
+    <div className=" px-2  ">
+
+      <div className="flex items-center gap-2 text-[#022c1f]">
         <Inbox color="#10b985" />
         <h2 className="text-2xl font-bold">Solicitud de turnos</h2>
       </div>
@@ -78,10 +79,12 @@ export default function SolicitudesPage() {
       ) : solicitudesFiltradas.length === 0 ? (
         <p className="mt-4 text-gray-500">No hay resultados para mostrar.</p>
       ) : (
+   
         <TablaSolicitudes
           solicitudes={solicitudesFiltradas}
           onCambiarEstado={handleCambiarEstado}
         />
+     
       )}
     </div>
   );

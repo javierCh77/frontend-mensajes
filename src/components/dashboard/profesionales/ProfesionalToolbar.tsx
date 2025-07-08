@@ -18,12 +18,12 @@ export function ProfesionalToolbar({
       <input
         type="text"
         placeholder="Buscar profesional..."
-        className="border px-3 py-2 rounded-md w-full max-w-sm focus:outline-none focus:ring-2 focus:ring-[#25D366]"
+        className="border px-3 py-1 rounded-md w-full max-w-sm focus:outline-none focus:ring-2 focus:ring-[#059669]"
         value={searchTerm}
         onChange={(e) => onSearchChange(e.target.value)}
       />
       <button
-        className="bg-[#25D366] hover:bg-[#1CB255] text-white px-4 py-2 rounded-md flex items-center gap-2 shadow-md"
+        className="bg-[#059669] hover:bg-[#047854] text-white px-4 py-1 rounded-md flex items-center gap-2 shadow-md"
         onClick={onNuevoClick}
       >
         <BookUser size={18} /> Nuevo Profesional

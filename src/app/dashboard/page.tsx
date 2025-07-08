@@ -27,7 +27,7 @@ export default function DashboardMensajesPage() {
     return <p className="text-center mt-10 text-gray-500">Cargando datos...</p>;
 
   return (
-    <div className="p-4 space-y-6 h-[calc(100vh-80px)] overflow-y-auto">
+    <div className="px-2 space-y-6  overflow-y-auto">
       <h2 className="text-xl font-bold text-foreground mb-1">
         Bienvenido al Panel Gerencial
       </h2>

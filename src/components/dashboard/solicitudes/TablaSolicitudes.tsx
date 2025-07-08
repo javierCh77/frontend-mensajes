@@ -23,58 +23,54 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
   };
 
   return (
-    <div className="overflow-x-auto border rounded-lg mt-4">
-      <table className="min-w-full text-xs text-left">
+    <div className="overflow-x-auto border rounded-lg h-[70vh] ">
+      <table className=" w-full text-sm text-left ">
         <thead className="bg-gray-100 text-gray-600">
           <tr>
-          <th className="px-4 py-2">Fecha Solicitud</th>
-            <th className="px-4 py-2">Nombre</th>
-            <th className="px-4 py-2">Apellido</th>
-            <th className="px-4 py-2">DNI</th>
-            <th className="px-4 py-2">Correo</th>
-            <th className="px-4 py-2">Teléfono</th>
-            <th className="px-4 py-2">Especialidad</th>
-            <th className="px-4 py-2">Profesional</th>
-            <th className="px-4 py-2">Franja Horaria</th>
-            <th className="px-4 py-2">Obra Social</th>
-            <th className="px-4 py-2">Estado</th>
-            <th className="px-4 py-2">Modificado por</th>
-            <th className="px-4 py-2">Fecha modificación</th>
-            <th className="px-4 py-2 text-right">Acciones</th>
+            <th className="p-1 px-5 whitespace-nowrap">Fecha Solicitud</th>
+            <th className="p-1 whitespace-nowrap">Nombre</th>
+            <th className="p-1 whitespace-nowrap">Apellido</th>
+            <th className="p-1 whitespace-nowrap">DNI</th>
+            <th className="p-1 whitespace-nowrap">Correo</th>
+            <th className="p-1 whitespace-nowrap">Teléfono</th>
+            <th className="p-1 whitespace-nowrap">Especialidad</th>
+            <th className="p-1 px-5 whitespace-nowrap">Profesional</th>
+            <th className="p-1 whitespace-nowrap">Franja Horaria</th>
+            <th className="p-1 whitespace-nowrap">Obra Social</th>
+            <th className="p-1 whitespace-nowrap">Estado</th>
+            <th className="p-1 whitespace-nowrap">Modificado por</th>
+            <th className="p-1 whitespace-nowrap">Fecha modificación</th>
+            <th className="p-1 text-right whitespace-nowrap">Acciones</th>
           </tr>
         </thead>
         <tbody>
-          {solicitudes.map((s) => (
-            <tr key={s.id} className="border-t hover:bg-gray-50">
-             <td className="px-4 py-1">
-                {new Date(s.fechaSolicitud).toLocaleString()}
-              </td>
-              <td className="px-4 py-2">{s.nombre}</td>
-              <td className="px-4 py-2">{s.apellido}</td>
-              <td className="px-4 py-2">{s.dni}</td>
-              <td className="px-4 py-2">{s.correo}</td>
-              <td className="px-4 py-2">{s.telefono}</td>
-              <td className="px-4 py-2">{s.especialidad}</td>
-              <td className="px-4 py-2">{s.profesional}</td>
-              <td className="px-4 py-2">{s.franjaHoraria}</td>
-              <td className="px-4 py-2">{s.obraSocial}</td>
-             
-              <td className="px-4 py-2">
-                <span
-                  className={`capitalize px-2 py-2 rounded-full text-xs font-semibold ${getEstadoBadgeClass(
-                    s.estado
-                  )}`}
-                >
+          {solicitudes.map((s, i) => (
+            <tr
+              key={s.id}
+              className={`border-t hover:bg-gray-50 ${i % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
+            >
+              <td className="p-1">{new Date(s.fechaSolicitud).toLocaleString()}</td>
+              <td className="p-1">{s.nombre}</td>
+              <td className="p-1">{s.apellido}</td>
+              <td className="p-1">{s.dni}</td>
+              <td className="p-1 truncate max-w-[160px]">{s.correo}</td>
+              <td className="p-1">{s.telefono}</td>
+              <td className="p-1">{s.especialidad}</td>
+              <td className="p-1">{s.profesional}</td>
+              <td className="p-1">{s.franjaHoraria}</td>
+              <td className="p-1">{s.obraSocial}</td>
+              <td className="p-1">
+                <span className={`capitalize px-2 py-1 rounded-full text-xs font-semibold ${getEstadoBadgeClass(s.estado)}`}>
                   {s.estado}
                 </span>
               </td>
-              <td className="px-4 py-2">{s.usuarioModificacion || "-"}</td>
-              <td className="px-4 py-2">
+              <td className="p-1">{s.usuarioModificacion || "-"}</td>
+              <td className="p-1">
                 {s.fechaModificacion
                   ? new Date(s.fechaModificacion).toLocaleString()
                   : "-"}
               </td>
-              <td className="px-4 py-1 text-right">
+              <td className="p-1 text-right">
                 <div className="flex gap-2 justify-end">
                   {s.estado !== "confirmado" && (
                     <button
