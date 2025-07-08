@@ -118,7 +118,7 @@ export default function ProfesionalesPage() {
   );
 
   return (
-    <div className="p-4">
+    <div className="px-2">
       <div className="flex items-center gap-2 text-[#022c1f]">
         <BookUser color="#10b985" />
         <h2 className="text-2xl font-bold">Profesionales</h2>
