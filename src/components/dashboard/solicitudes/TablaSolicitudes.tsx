@@ -38,7 +38,7 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
             <th className="p-1 px-3 whitespace-nowrap">Franja Horaria</th>
             <th className="p-1 px-3 whitespace-nowrap">Obra Social</th>
             <th className="p-1 px-3 whitespace-nowrap">Estado</th>
-            <th className="p-1 px-60 whitespace-nowrap">Modifico</th>
+            <th className="p-1 px-6 whitespace-nowrap">Modifico</th>
             <th className="p-1 px-3 whitespace-nowrap">Fecha modificación</th>
             <th className="p-1 px-3 text-center whitespace-nowrap">Acciones</th>
           </tr>
