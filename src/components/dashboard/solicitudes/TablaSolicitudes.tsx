@@ -24,23 +24,23 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
 
   return (
     <div className="overflow-x-auto border rounded-lg h-[70vh] ">
-      <table className=" w-full text-sm text-left ">
+      <table className=" w-full text-sm text-center ">
         <thead className="bg-gray-100 text-gray-600">
-          <tr>
-            <th className="p-1 px-5 whitespace-nowrap">Fecha Solicitud</th>
-            <th className="p-1 whitespace-nowrap">Nombre</th>
-            <th className="p-1 whitespace-nowrap">Apellido</th>
-            <th className="p-1 whitespace-nowrap">DNI</th>
-            <th className="p-1 whitespace-nowrap">Correo</th>
-            <th className="p-1 whitespace-nowrap">Teléfono</th>
-            <th className="p-1 whitespace-nowrap">Especialidad</th>
+          <tr >
+            <th className="p-1 px-4  whitespace-nowrap">Fecha Solicitud</th>
+            <th className="p-1 px-3  whitespace-nowrap">Nombre</th>
+            <th className="p-1 px-3 whitespace-nowrap">Apellido</th>
+            <th className="p-1 px-3 whitespace-nowrap">DNI</th>
+            <th className="p-1 px-18 whitespace-nowrap">Correo</th>
+            <th className="p-1 px-3 whitespace-nowrap">Teléfono</th>
+            <th className="p-1 px-3 whitespace-nowrap">Especialidad</th>
             <th className="p-1 px-5 whitespace-nowrap">Profesional</th>
-            <th className="p-1 whitespace-nowrap">Franja Horaria</th>
-            <th className="p-1 whitespace-nowrap">Obra Social</th>
-            <th className="p-1 whitespace-nowrap">Estado</th>
-            <th className="p-1 whitespace-nowrap">Modifico</th>
-            <th className="p-1 whitespace-nowrap">Fecha modificación</th>
-            <th className="p-1 text-center whitespace-nowrap">Acciones</th>
+            <th className="p-1 px-3 whitespace-nowrap">Franja Horaria</th>
+            <th className="p-1 px-3 whitespace-nowrap">Obra Social</th>
+            <th className="p-1 px-3 whitespace-nowrap">Estado</th>
+            <th className="p-1 px-60 whitespace-nowrap">Modifico</th>
+            <th className="p-1 px-3 whitespace-nowrap">Fecha modificación</th>
+            <th className="p-1 px-3 text-center whitespace-nowrap">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -49,7 +49,7 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
               key={s.id}
               className={`border-t hover:bg-gray-50 ${i % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
             >
-              <td className="p-1 px-5">{new Date(s.fechaSolicitud).toLocaleString()}</td>
+              <td className="p-1">{new Date(s.fechaSolicitud).toLocaleString()}</td>
               <td className="p-1">{s.nombre}</td>
               <td className="p-1">{s.apellido}</td>
               <td className="p-1">{s.dni}</td>
