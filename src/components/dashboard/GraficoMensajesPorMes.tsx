@@ -20,6 +20,7 @@ interface Props {
 }
 
 export default function GraficoMensajesPorMes({ data }: Props) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [chartData, setChartData] = useState<any>(null);
 
   useEffect(() => {
@@ -55,6 +56,7 @@ export default function GraficoMensajesPorMes({ data }: Props) {
     plugins: {
       tooltip: {
         callbacks: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           label: function (context: any) {
             const index = context.dataIndex;
             const actual = context.dataset.data[index];

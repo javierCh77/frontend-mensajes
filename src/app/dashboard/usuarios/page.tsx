@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Pencil, Search, Trash2, UserRoundPlus, Users } from "lucide-react";
+import { UserRoundPlus, Users } from "lucide-react";
 import api from "@/lib/api";
 import { toast } from "react-hot-toast";
 

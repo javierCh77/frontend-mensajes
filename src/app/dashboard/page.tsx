@@ -11,6 +11,7 @@ import GraficoMensajesPorMes from "@/components/dashboard/GraficoMensajesPorMes"
 import api from "@/lib/api"; // ✅ Importás Axios configurado
 
 export default function DashboardMensajesPage() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [stats, setStats] = useState<any>(null);
 
   useEffect(() => {

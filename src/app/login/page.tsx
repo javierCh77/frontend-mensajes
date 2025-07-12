@@ -39,6 +39,7 @@ export default function LoginPage() {
       } else {
         setError("Error desconocido al iniciar sesión.");
       }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       if (error.response) {
         if (error.response.status === 401) {

@@ -20,6 +20,7 @@ interface Props {
 }
 
 export default function GraficoEvolucionMensajes({ data }: Props) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [chartData, setChartData] = useState<any>(null);
 
   useEffect(() => {

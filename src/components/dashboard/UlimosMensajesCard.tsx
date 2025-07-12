@@ -1,4 +1,5 @@
 // components/dashboard/UltimosMensajesCard.tsx
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function UltimosMensajesCard({ mensajes }: { mensajes: any[] }) {
     return (
       <div className="bg-white rounded-lg shadow p-4 h-full">
