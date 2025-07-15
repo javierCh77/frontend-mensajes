@@ -26,9 +26,15 @@ function ConfirmarTurnoModal({
   };
 
   return (
-    <Dialog open={isOpen} onClose={onClose} className="fixed z-50 inset-0 flex items-center justify-center">
+    <Dialog
+      open={isOpen}
+      onClose={onClose}
+      className="fixed z-50 inset-0 flex items-center justify-center"
+    >
       <div className="bg-white p-6 rounded shadow-md w-full max-w-md border">
-        <Dialog.Title className="text-lg font-semibold mb-2">Confirmar Turno</Dialog.Title>
+        <Dialog.Title className="text-lg font-semibold mb-2">
+          Confirmar Turno
+        </Dialog.Title>
         <label className="block text-sm mb-1">Fecha y Hora del Turno:</label>
         <input
           type="datetime-local"
@@ -37,8 +43,16 @@ function ConfirmarTurnoModal({
           onChange={(e) => setFechaHora(e.target.value)}
         />
         <div className="flex justify-end gap-2">
-          <button onClick={onClose} className="text-gray-600 hover:text-gray-800">Cancelar</button>
-          <button onClick={handleConfirmar} className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700">
+          <button
+            onClick={onClose}
+            className="text-gray-600 hover:text-gray-800"
+          >
+            Cancelar
+          </button>
+          <button
+            onClick={handleConfirmar}
+            className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700"
+          >
             Confirmar
           </button>
         </div>
@@ -49,12 +63,17 @@ function ConfirmarTurnoModal({
 
 interface Props {
   solicitudes: SolicitudTurno[];
-  onCambiarEstado: (id: string, nuevoEstado: string, fechaHora?: string) => void;
+  onCambiarEstado: (
+    id: string,
+    nuevoEstado: string,
+    fechaHora?: string
+  ) => void;
 }
 
 export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
-  const [solicitudSeleccionada, setSolicitudSeleccionada] = useState<SolicitudTurno | null>(null);
+  const [solicitudSeleccionada, setSolicitudSeleccionada] =
+    useState<SolicitudTurno | null>(null);
 
   const abrirModalConfirmacion = (solicitud: SolicitudTurno) => {
     setSolicitudSeleccionada(solicitud);
@@ -100,18 +119,23 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
               <th className="p-1 px-3 whitespace-nowrap">Estado</th>
               <th className="p-1 px-6 whitespace-nowrap">Modifico</th>
               <th className="p-1 px-3 whitespace-nowrap">Fecha modificación</th>
-              <th className="p-1 px-3 text-center whitespace-nowrap">Acciones</th>
+              <th className="p-1 px-3 text-center whitespace-nowrap">
+                Acciones
+              </th>
               <th className="p-1 px-4 whitespace-nowrap">Fecha Turno</th>
-
             </tr>
           </thead>
           <tbody>
             {solicitudes.map((s, i) => (
               <tr
                 key={s.id}
-                className={`border-t hover:bg-gray-50 ${i % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
+                className={`border-t hover:bg-gray-50 ${
+                  i % 2 === 0 ? "bg-white" : "bg-gray-50"
+                }`}
               >
-                <td className="p-1">{new Date(s.fechaSolicitud).toLocaleString()}</td>
+                <td className="p-1">
+                  {new Date(s.fechaSolicitud).toLocaleString()}
+                </td>
                 <td className="p-1">{s.nombre}</td>
                 <td className="p-1">{s.apellido}</td>
                 <td className="p-1">{s.dni}</td>
@@ -123,7 +147,9 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
                 <td className="p-1">{s.obraSocial}</td>
                 <td className="p-1">
                   <span
-                    className={`capitalize px-2 py-1 rounded-full text-xs font-semibold ${getEstadoBadgeClass(s.estado)}`}
+                    className={`capitalize px-2 py-1 rounded-full text-xs font-semibold ${getEstadoBadgeClass(
+                      s.estado
+                    )}`}
                   >
                     {s.estado}
                   </span>
@@ -165,9 +191,17 @@ export function TablaSolicitudes({ solicitudes, onCambiarEstado }: Props) {
                     )}
                   </div>
                 </td>
-                <td className="p-1">
-  {s.fechaHoraTurno ? new Date(s.fechaHoraTurno).toLocaleString() : "-"}
-</td>
+                <td
+                  className={`p-1 ${
+                    s.fechaHoraTurno
+                      ? "bg-green-100 text-green-700 font-medium rounded"
+                      : ""
+                  }`}
+                >
+                  {s.fechaHoraTurno
+                    ? new Date(s.fechaHoraTurno).toLocaleString()
+                    : "-"}
+                </td>
               </tr>
             ))}
           </tbody>
