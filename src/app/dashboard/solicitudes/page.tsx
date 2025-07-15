@@ -33,15 +33,28 @@ export default function SolicitudesPage() {
     }
   };
 
-  const handleCambiarEstado = async (id: string, nuevoEstado: string) => {
+  // ✅ Ahora acepta fechaHora como parámetro opcional
+  const handleCambiarEstado = async (
+    id: string,
+    nuevoEstado: string,
+    fechaHora?: string
+  ) => {
     if (!usuario) return toast.error("No se pudo identificar al usuario");
 
     try {
       await api.patch(`/solicitudes-turno/${id}`, {
         estado: nuevoEstado,
         usuarioModificacion: `${usuario.nombre} ${usuario.apellido}`,
+        fechaHoraTurno: fechaHora ?? null,
       });
-      toast.success(`Turno marcado como ${nuevoEstado}`);
+
+      if (nuevoEstado === "confirmado" && fechaHora) {
+        const fechaLocal = new Date(fechaHora).toLocaleString();
+        toast.success(`Turno confirmado para ${fechaLocal}`);
+      } else {
+        toast.success(`Turno marcado como ${nuevoEstado}`);
+      }
+
       fetchSolicitudes();
     } catch {
       toast.error("Error al actualizar el estado");
@@ -60,8 +73,7 @@ export default function SolicitudesPage() {
   });
 
   return (
-    <div className=" px-2  ">
-
+    <div className="px-2">
       <div className="flex items-center gap-2 text-[#022c1f]">
         <Inbox color="#10b985" />
         <h2 className="text-2xl font-bold">Solicitud de turnos</h2>
@@ -79,12 +91,10 @@ export default function SolicitudesPage() {
       ) : solicitudesFiltradas.length === 0 ? (
         <p className="mt-4 text-gray-500">No hay resultados para mostrar.</p>
       ) : (
-   
         <TablaSolicitudes
           solicitudes={solicitudesFiltradas}
           onCambiarEstado={handleCambiarEstado}
         />
-     
       )}
     </div>
   );

@@ -13,4 +13,5 @@ export interface SolicitudTurno {
   estado: string;
   usuarioModificacion?: string;
   fechaModificacion?: string;
+  fechaHoraTurno?: string; // ← asegurate de tener esta propiedad
 }
